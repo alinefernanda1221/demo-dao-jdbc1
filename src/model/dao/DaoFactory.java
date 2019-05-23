@@ -1,4 +1,5 @@
 package model.dao;
+import db.DB;
 /**
  * Create dao's implementations
  */
@@ -8,6 +9,6 @@ public class DaoFactory {
 	
 	//Return implementation
 	public static SellerDao createSellerDao() {
-		return new SellerDaoImplJdbc();
+		return new SellerDaoImplJdbc(DB.getConnection());
 	}
 }
