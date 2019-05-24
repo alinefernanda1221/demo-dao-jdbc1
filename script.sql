@@ -50,3 +50,9 @@ SELECT * FROM SELLER;
 
 -- DESCRIBE TABLE
 SELECT * FROM sqlite_master WHERE name = 'SELLER';
+
+
+SELECT seller.*,department.Name as DepName
+FROM seller INNER JOIN department
+ON seller.ID_DEPARTMENT = department.ID_DEPARTMENT
+WHERE seller.ID_DEPARTMENT = 2;
