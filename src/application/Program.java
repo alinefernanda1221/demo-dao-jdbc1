@@ -32,23 +32,26 @@ public class Program {
 		System.out.println("--------------------\n");
 		
 		System.out.println("Test #3 - FindAll");
+		List<Seller> sellersAll = sellerDao.findAll();
+		for(Seller sel : sellersAll) {
+			System.out.println(sel);
+		}
+		System.out.println("--------------------\n");		
+
+		System.out.println("Test #4 - InsertSeller");
+		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4600.00);
+		newSeller.setDepartment(new Department(2, null));
+		sellerDao.insert(newSeller);
+		System.out.println("New id: " + newSeller.getId());
 		
 		System.out.println("--------------------\n");		
 
-//		System.out.println("Test #4 - InsertSeller");
-//		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4600.00);
-//		newSeller.setDepartment(new Department(2, null));
-//		sellerDao.insert(newSeller);
-//		System.out.println("New id: " + newSeller.getId());
-//		
-//		System.out.println("--------------------\n");		
-
-//		System.out.println("Test #5 - UpdateSeller");
-//		seller = sellerDao.findById(1);
-//		seller.setName("Aline Carvalho");
-//		sellerDao.update(seller);
-//		System.out.println("Update completed");
-//		System.out.println("--------------------\n");		
+		System.out.println("Test #5 - UpdateSeller");
+		seller = sellerDao.findById(1);
+		seller.setName("Aline Carvalho");
+		sellerDao.update(seller);
+		System.out.println("Update completed");
+		System.out.println("--------------------\n");		
 
 		System.out.println("Test #6 - DeleteSeller");
 		System.out.println("Insert code to delete: ");
